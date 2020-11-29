@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JPanel;
 
-public class MainFrame extends JFrame{
+public class LoginFrame extends JFrame{
     private Container cp;
     private JLabel id = new JLabel("id:");
     private JTextField tid = new JTextField("");
@@ -20,7 +20,7 @@ public class MainFrame extends JFrame{
     private JPanel jpn2 = new JPanel(new GridLayout(2,1,1,1));
     private JPanel jpn3 = new JPanel(new GridLayout(1,3,1,1));
 
-    public MainFrame(){
+    public LoginFrame(){
         init();
     }
     
