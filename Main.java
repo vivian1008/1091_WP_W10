@@ -1,6 +1,6 @@
-public class Main{
+public public class Main{
     public static void main(String[] args) {
-        MainFrame mFrm = new MainFrame();
-        mFrm.setVisible(true);
+        LoginFrame logFrm = new LoginFrame();
+        logFrm.setVisible(true);
     }
 }

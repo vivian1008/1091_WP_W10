@@ -54,5 +54,11 @@ public class LoginFrame extends JFrame{
                 System.exit(0);
             }
         });
+
+        bod.addActionListener(new ActionListener(){
+            pubilc void actionPerformed(ActionEvent ae){
+                KeyboardFrame kFrm = new KeyboardFrame(Frame.this);
+            }
+        });
     }
 }
