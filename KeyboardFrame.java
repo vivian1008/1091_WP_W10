@@ -29,5 +29,19 @@ public class KeyboardFrame extends JFrame{
         this.setBounds(200,200,800,400);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         cp.setLayout(new BorderLayout(3,3));
+        int x = 0;
+        boolean flag = true;
+        randMap[x] = rand.nextInt(50);
+        int y = 0;
+        while(y < x && flag){
+           if(randMap[x] == randMap[y]){
+               flag = false;
+               break;
+           } 
+           y++;
+        }
+        if(flag){
+            x++;
+        }
     }
 }
