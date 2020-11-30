@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event;
+import java.awt.event.ActionEvent;
 import java.util.Random;
 
 public class KeyboardFrame extends JFrame{
@@ -29,6 +30,41 @@ public class KeyboardFrame extends JFrame{
         this.setBounds(200,200,800,400);
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         cp.setLayout(new BorderLayout(3,3));
+        for(int i = 0; i < btnlab.length; i++){
+            jbtn[i] = new JButton(btnlab[i]);
+            jbtn[i].setFont(new Font(null, Font,PLAIN,28));
+            jpl1.add(jbtn[i]);
+            if(i > jbtn.length - 5){
+                jpl2.add(jbtn[i]);
+            }
+            jbtn[i].addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent e2){
+                    JButton jbtmp = (JButton)e2.getSource();
+                    switch(jbtmp.getText()){
+                        case "Exit":
+                        KeyboardFrame.this.dispose();
+                        break;
+                        case "Reset":
+                        jpf.setText("");
+                        break;
+                        case "Submit":
+                        loginfrm.setPW(jpf.getText());
+                        KeyboardFrame.this.dispose();
+                        break;
+                        default:
+                        char c = jbtmp.getText().charAt(0);
+                        int n = c - 'a';
+                        if(n >= 0 && n < 26){
+                            if(cap.isSelected()){
+                                c = Character.toUpperCase(c);
+                            }
+                        }
+                        jpf.setText(jpf.getText() + c);
+                        System.out.println(jpf.getText());
+                    }
+                }
+            });
+        }
         int x = 0;
         boolean flag = true;
         randMap[x] = rand.nextInt(50);
